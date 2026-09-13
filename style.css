@@ -1,0 +1,65 @@
+/* Rutinim sitesi. Harici yazı tipi yok: gizlilik sayfası ziyaretçiyi başka bir
+   sunucuya (Google Fonts) göndermesin diye sistem yazı tipleri kullanılıyor. */
+:root {
+  --ground: #EDEFF5; --panel: #FFFFFF; --panel-2: #F7F8FC;
+  --ink: #171A22; --muted: #5C6478; --faint: #8A92A6; --line: #DBDFEA;
+  --accent: #4A6CF7; --accent-soft: #E4E9FE; --r: 18px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #0E1016; --panel: #171A23; --panel-2: #1E212C;
+    --ink: #E9EBF2; --muted: #939BB0; --faint: #6C748A; --line: #262A36;
+    --accent: #8AA0FF; --accent-soft: #232941;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 32px 22px 80px; }
+
+nav.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 36px; }
+nav.top .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; }
+nav.top .brand img { width: 32px; height: 32px; border-radius: 8px; }
+nav.top .lang { font-size: 14px; }
+
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin: 0 0 12px; }
+h1 { font-weight: 800; font-size: clamp(30px, 5vw, 42px); line-height: 1.08; letter-spacing: -.025em; text-wrap: balance; margin: 0 0 14px; }
+h2 { font-weight: 800; font-size: 21px; letter-spacing: -.015em; margin: 40px 0 10px; }
+h3 { font-size: 16px; font-weight: 700; margin: 22px 0 6px; }
+p { color: var(--muted); margin: 0 0 12px; }
+p strong, li strong { color: var(--ink); font-weight: 700; }
+.lede { font-size: 17px; margin: 0 0 6px; }
+.updated { font-size: 13px; color: var(--faint); margin: 0; font-variant-numeric: tabular-nums; }
+
+.summary { margin-top: 26px; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 12px; padding: 18px 20px; }
+.summary p { margin: 0; font-size: 15px; }
+.summary p + p { margin-top: 9px; }
+
+ul { color: var(--muted); padding-left: 20px; margin: 0 0 12px; }
+li { margin-bottom: 7px; }
+
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 14.5px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
+td { color: var(--muted); }
+td:first-child { color: var(--ink); font-weight: 600; }
+
+code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 13.5px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; color: var(--ink); word-break: break-all; }
+a { color: var(--accent); }
+
+footer { margin-top: 46px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; }
+footer p { color: var(--faint); margin: 0 0 6px; }
+
+/* Ana sayfa */
+.hero { display: grid; gap: 18px; justify-items: start; }
+.hero img { width: 88px; height: 88px; border-radius: 22px; }
+.cards { display: grid; gap: 12px; margin-top: 30px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; }
+.card h2 { margin: 0 0 6px; font-size: 18px; }
+.card p:last-child { margin-bottom: 0; }
