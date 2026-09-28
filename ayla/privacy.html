@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayla Privacy Policy</title>
+<meta name="description" content="What data Ayla processes, where it is stored, and what it never does.">
+<link rel="icon" href="../ayla-icon.png">
+<link rel="alternate" hreflang="tr" href="gizlilik.html">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="../"><img src="../ayla-icon.png" alt="">Ayla</a>
+    <a class="lang" href="gizlilik.html" hreflang="tr" lang="tr">Türkçe</a>
+  </nav>
+
+  <header>
+    <h1>Privacy Policy</h1>
+    <p class="lede">What data Ayla processes, where it is stored, and what it never does.</p>
+    <p class="updated">Last updated: 28 September 2026</p>
+
+    <div class="summary">
+      <p><strong>In short.</strong> Ayla has no server and
+        <strong>does not even hold the internet permission</strong>. Your period records,
+        symptoms and notes are stored only on your phone, encrypted. Nothing is sent to us,
+        because the app is technically unable to send data anywhere.</p>
+      <p>No account, no email, no ads, no analytics, no crash reporting, no cloud backup.</p>
+      <p>Your data leaves your phone only when <strong>you</strong> export it yourself.</p>
+    </div>
+  </header>
+
+  <h2>1. What data we process</h2>
+  <p>Ayla processes only the data needed to run the app. You create all of it, and all of it
+    stays on your phone:</p>
+
+  <div class="tw">
+  <table>
+    <tr><th>Data</th><th>Contents and purpose</th></tr>
+    <tr><td>Period records</td><td>The start and end dates you mark. Used for cycle calculations and predictions</td></tr>
+    <tr><td>Daily logs</td><td>Flow, mood, energy level, pain level, symptoms, hours of sleep and a short note for a given day</td></tr>
+    <tr><td>Intercourse records</td><td>The days you mark. Used to produce a per-cycle summary for people planning a pregnancy</td></tr>
+    <tr><td>Cycle settings</td><td>The average cycle length and period length you entered during setup</td></tr>
+    <tr><td>App settings</td><td>Your theme and reminder preferences</td></tr>
+    <tr><td>App lock</td><td>If you set a PIN: <strong>not the PIN itself</strong>, but an irreversible hash of it (PBKDF2-HMAC-SHA256 with a random salt) and a failed-attempt counter</td></tr>
+  </table>
+  </div>
+
+  <p><strong>Data we do not collect:</strong> name, email address, phone number, date of
+    birth, location, contacts, photos, device identifier, advertising ID, IP address logs,
+    usage analytics, crash reports. The app asks for none of these, and even if it did,
+    there is nowhere for it to send them.</p>
+  <p>If you email us (see <a href="#contact">Contact</a>) we will of course see your email
+    address and what you wrote. We use it only to reply to you.</p>
+
+  <h2>2. We know this is health data</h2>
+  <p>Menstrual cycles, symptoms and intercourse records are
+    <strong>special category personal data</strong>. The safest way to handle such data is
+    not to collect it at all. Ayla is built on that principle: because the data never leaves
+    your device, no copy ever exists that we could access, leak, be compelled to hand over,
+    or lose in a breach.</p>
+  <p>We hold no record of your data. This is not a promise, it is a consequence of how the
+    app is built.</p>
+
+  <h2>3. Where your data is stored</h2>
+
+  <h3>On your phone, encrypted</h3>
+  <p>All of your records live in a database inside the app's own private storage area, which
+    other apps on Android cannot reach.</p>
+  <p>On top of that, the database file is <strong>encrypted with SQLCipher</strong>. The
+    encryption key is held in your device's hardware-backed secure store (Android Keystore)
+    and cannot be extracted from it. Someone who copies the database file off your phone
+    cannot read its contents.</p>
+  <p><strong>There is a trade-off you should know about:</strong> because the key is bound to
+    the device, uninstalling the app or clearing its data makes your records
+    <strong>permanently unrecoverable</strong>. Exporting a backup from time to time is a
+    good habit.</p>
+
+  <h3>Excluded from cloud backup</h3>
+  <p>Android can back up app data to your Google account at the operating-system level. Ayla
+    <strong>turns this off</strong> (<code>allowBackup="false"</code>). Your health records
+    are not copied to Google Drive, to cloud backup, or automatically to a new phone when you
+    switch devices. To move them yourself, use the export file described below.</p>
+
+  <h3>Backup files you save yourself</h3>
+  <p><strong>Profile → Data Management → Export data</strong> saves all of your records as a
+    JSON file to a location you choose. Android's own file picker asks where to put it; the
+    app never writes it somewhere on your behalf.</p>
+  <p><strong>This file is not encrypted.</strong> The in-app encryption does not cover it: it
+    contains your period dates, symptoms and notes in plain text. From the moment it is saved
+    it is entirely your responsibility — anyone you share it with can read it, and uploading
+    it to a cloud service hands it to that provider. Keep it somewhere safe.</p>
+  <p><strong>Import data</strong> restores such a file. Importing <strong>replaces</strong>
+    your existing records, so the app asks you to confirm.</p>
+
+  <h2>4. App lock and biometrics</h2>
+  <p>You can optionally lock the app with a PIN.</p>
+  <ul>
+    <li><strong>Your PIN is not stored.</strong> Only an irreversible hash is kept
+      (PBKDF2-HMAC-SHA256, 120,000 rounds, random salt). The PIN cannot be recovered from
+      that hash.</li>
+    <li>Repeated wrong entries progressively slow down further attempts.</li>
+    <li>While the lock is enabled, the app <strong>blocks screenshots</strong> and hides its
+      content from Android's recent-apps preview.</li>
+    <li>If you choose <strong>fingerprint or face unlock</strong>, Android performs the
+      verification entirely. The app never has access to your biometric data, never sees it
+      and never stores it; it only receives a "verified" answer from Android.</li>
+  </ul>
+  <p><strong>If you forget your PIN there is no way to unlock the app.</strong> Not for us
+    either. You would have to reset the app from your phone's settings, which erases your
+    records. Exporting a backup before enabling the lock is recommended.</p>
+
+  <h2>5. Permissions used</h2>
+  <div class="tw">
+  <table>
+    <tr><th>Permission</th><th>Why it is needed</th></tr>
+    <tr><td>Notifications</td><td>To show period-approaching and daily reminders you have chosen. You may decline it; the app works fully without notifications</td></tr>
+  </table>
+  </div>
+  <p>That is the complete list of permissions Ayla requests. In particular:</p>
+  <p><strong>There is no internet permission.</strong> The app's permission list does not
+    contain <code>android.permission.INTERNET</code>. This is stronger than a promise not to
+    send data: even if the app tried, the operating system would not let it reach the
+    network. You can verify this yourself in your phone's app info screen.</p>
+  <p>Location, camera, microphone, contacts, photos, calendar, health platform and
+    advertising ID permissions are <strong>not requested</strong> either.</p>
+
+  <h2>6. Data sharing</h2>
+  <p>Ayla <strong>does not share, sell or rent your data to anyone.</strong> There is no
+    exchange of data with any ad network, analytics provider, data broker or other third
+    party.</p>
+  <p>The app contains no third-party advertising, analytics, tracking or crash-reporting
+    library. Without the internet permission, it connects to no external service at all.</p>
+
+  <h2>7. What appears on your screen and in notifications</h2>
+  <p>While your phone is locked, reminder notifications show only a generic line on the lock
+    screen ("Ayla – You have a new reminder"). Your period dates, symptoms or any other
+    health detail never appear there. You see the reminder itself once you unlock the
+    phone.</p>
+
+  <h2>8. Medical disclaimer</h2>
+  <p>Ayla is not a diagnostic or treatment application. Its predictions are approximations
+    based on the history you recorded and are not a substitute for medical advice.</p>
+  <p><strong>Fertility predictions must not be used as a method of contraception.</strong></p>
+  <p>If the symptoms you record are unusual for you, or if you are concerned, consider
+    consulting a healthcare professional.</p>
+
+  <h2>9. Children's privacy</h2>
+  <p>Ayla is not directed at children. Because it collects no age, identity or contact
+    information, it does not process children's personal data either.</p>
+
+  <h2>10. Deleting your data</h2>
+  <p>All of your data is under your control:</p>
+  <ul>
+    <li><strong>Individually:</strong> you can edit and delete daily logs and period marks
+      from within the app.</li>
+    <li><strong>Everything:</strong> <strong>Profile → Data Management → Delete all data</strong>
+      permanently erases your records.</li>
+    <li><strong>Uninstalling the app</strong> also deletes all data on your phone. "Clear
+      storage" in Android settings does the same.</li>
+    <li><strong>Backup files:</strong> you delete the files you saved yourself; only you know
+      where they are.</li>
+  </ul>
+  <p>Since we hold no copy, there is no deletion request to send us; we have nothing to
+    delete. If you want emails you sent us deleted, just ask.</p>
+
+  <h2>11. Your rights</h2>
+  <p>Regulations such as the GDPR and Turkey's KVKK grant you rights to access, rectify,
+    erase and port your data. In Ayla all of these are exercised directly inside the app,
+    without asking anyone's permission: you see your records on screen, edit them, delete
+    them, and take them with you as a machine-readable file via <strong>Export data</strong>.</p>
+  <p>There is no situation in which you would need to contact us, because we process none of
+    your data.</p>
+
+  <h2>12. Changes to this policy</h2>
+  <p>This text may be updated as the app gains new features. The current version is always on
+    this page; the date above shows the last change. If an update changes how data is
+    handled, we will announce it inside the app as well.</p>
+
+  <h2 id="contact">13. Contact</h2>
+  <p>Ayla is developed and published by <strong>Akbas Apps</strong>.</p>
+  <p>For questions, objections or bug reports:
+    <a href="mailto:akbasapps@gmail.com">akbasapps@gmail.com</a></p>
+
+  <footer>
+    <p>Ayla · Period and cycle tracking</p>
+    <p>This policy applies to all versions of the app.</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayla Gizlilik Politikası</title>
+<meta name="description" content="Ayla'nın hangi verileri işlediği, nerede sakladığı ve neleri hiç yapmadığı.">
+<link rel="icon" href="../ayla-icon.png">
+<link rel="alternate" hreflang="en" href="privacy.html">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="../"><img src="../ayla-icon.png" alt="">Ayla</a>
+    <a class="lang" href="privacy.html" hreflang="en" lang="en">English</a>
+  </nav>
+
+  <header>
+    <h1>Gizlilik Politikası</h1>
+    <p class="lede">Ayla'nın hangi verileri işlediğini, nerede sakladığını ve neleri
+      hiç yapmadığını anlatır.</p>
+    <p class="updated">Son güncelleme: 28 Eylül 2026</p>
+
+    <div class="summary">
+      <p><strong>Kısa özet.</strong> Ayla'nın sunucusu yok ve
+        <strong>internet izni bile yok</strong>. Adet kayıtların, belirtilerin ve notların
+        yalnızca telefonunda, şifrelenmiş olarak saklanır. Hiçbir şey bize gönderilmez,
+        çünkü uygulama teknik olarak hiçbir yere veri gönderemez.</p>
+      <p>Hesap yok, e-posta yok, reklam yok, analitik yok, çökme raporu yok,
+        bulut yedeği yok.</p>
+      <p>Verilerin telefonundan yalnızca <strong>senin kendi elinle</strong> çıkar:
+        Veri Yönetimi'nden bir yedek dosyası kaydettiğinde.</p>
+    </div>
+  </header>
+
+  <h2>1. Hangi verileri işliyoruz</h2>
+  <p>Ayla yalnızca uygulamayı kullanabilmek için gereken verileri işler. Bunların hepsini
+    sen oluşturursun ve hepsi telefonunda kalır:</p>
+
+  <div class="tw">
+  <table>
+    <tr><th>Veri</th><th>İçeriği ve amacı</th></tr>
+    <tr><td>Adet dönemleri</td><td>İşaretlediğin başlangıç ve bitiş tarihleri. Döngü hesabı ve tahminler bunu kullanır</td></tr>
+    <tr><td>Günlük kayıtlar</td><td>Bir güne girdiğin kanama yoğunluğu, ruh hali, enerji düzeyi, ağrı şiddeti, belirtiler, uyku süresi ve kısa not</td></tr>
+    <tr><td>İlişki kayıtları</td><td>İşaretlediğin günler. Gebelik planlayanlar için döngü başına özet çıkarmakta kullanılır</td></tr>
+    <tr><td>Döngü ayarların</td><td>Kurulumda girdiğin ortalama döngü uzunluğu ve adet süresi</td></tr>
+    <tr><td>Uygulama ayarları</td><td>Tema ve hatırlatma tercihlerin</td></tr>
+    <tr><td>Uygulama kilidi</td><td>PIN kurduysan <strong>PIN'in kendisi değil</strong>, geri çevrilemeyen bir özeti (PBKDF2-HMAC-SHA256, rastgele tuzla) ve yanlış deneme sayacı</td></tr>
+  </table>
+  </div>
+
+  <p><strong>Toplamadığımız veriler:</strong> ad, soyad, e-posta adresi, telefon numarası,
+    doğum tarihi, konum, kişi listesi, fotoğraflar, cihaz kimliği, reklam kimliği, IP adresi
+    kaydı, kullanım istatistiği, çökme raporu. Uygulama bunların hiçbirini istemez ve
+    isteseydi bile gönderebileceği bir yer yoktur.</p>
+  <p>Bize e-posta yazarsan (bkz. <a href="#iletisim">İletişim</a>) e-posta adresini ve
+    yazdıklarını elbette görürüz. Bunu yalnızca sana cevap vermek için kullanırız.</p>
+
+  <h2>2. Sağlık verisi olduğunun farkındayız</h2>
+  <p>Adet döngüsü, belirtiler ve ilişki kayıtları <strong>özel nitelikli kişisel veridir</strong>.
+    Bu tür veriyi en güvenli işleme biçimi, onu hiç toplamamaktır. Ayla'nın tasarımı bunun
+    üzerine kurulu: veri cihazdan çıkmadığı için bizim erişebileceğimiz, sızdırabileceğimiz,
+    mahkeme kararıyla teslim edebileceğimiz ya da bir veri ihlalinde kaybedebileceğimiz bir
+    kopya hiçbir zaman oluşmaz.</p>
+  <p>Bizde senin verine ait hiçbir kayıt yoktur. Bu, bir taahhüt değil, uygulamanın
+    yapısının sonucudur.</p>
+
+  <h2>3. Verilerin nerede saklanıyor</h2>
+
+  <h3>Telefonunda, şifrelenmiş olarak</h3>
+  <p>Bütün kayıtların uygulamanın kendi özel alanındaki bir veritabanında durur. Android'de
+    bu alana başka uygulamalar erişemez.</p>
+  <p>Bunun üstüne veritabanı dosyası <strong>SQLCipher ile şifrelenir</strong>. Şifreleme
+    anahtarı, cihazının donanım destekli güvenli kasasında (Android Keystore) saklanır ve
+    uygulamanın dışına çıkarılamaz. Yani birisi telefonundan veritabanı dosyasını kopyalasa
+    bile içeriğini okuyamaz.</p>
+  <p><strong>Bunun bir bedeli var ve bilmelisin:</strong> anahtar cihaza bağlı olduğu için,
+    uygulamayı kaldırırsan ya da verilerini temizlersen kayıtların
+    <strong>hiçbir şekilde geri getirilemez</strong>. Ara sıra dışa aktarma yapmak iyi bir
+    alışkanlıktır.</p>
+
+  <h3>Bulut yedeğine dahil edilmez</h3>
+  <p>Android, uygulama verilerini işletim sistemi düzeyinde Google hesabına yedekleyebilir.
+    Ayla bunu <strong>kapatır</strong> (<code>allowBackup="false"</code>). Sağlık kayıtların
+    Google Drive'a, bulut yedeğine ya da telefon değiştirdiğinde yeni cihaza kendiliğinden
+    taşınmaz. Taşımak istersen aşağıdaki yedek dosyasını kullanırsın.</p>
+
+  <h3>Kendi kaydettiğin yedek dosyası</h3>
+  <p><strong>Profil → Veri Yönetimi → Verileri dışa aktar</strong> ile bütün kayıtlarını bir
+    JSON dosyası olarak, telefonunda seçtiğin bir konuma kaydedebilirsin. Dosyayı nereye
+    kaydedeceğini Android'in kendi dosya seçicisi sorar; uygulama senin adına bir yere
+    yazmaz.</p>
+  <p><strong>Bu dosya şifreli değildir.</strong> Uygulama içindeki şifreleme dosyayı
+    kapsamaz; içinde adet tarihlerin, belirtilerin ve notların düz metin olarak bulunur.
+    Dosya kaydedildiği andan itibaren tamamen senin sorumluluğundadır: paylaştığın kişi
+    içeriğini okuyabilir, buluta yüklersen bulut sağlayıcısına gitmiş olur. Yedeği güvenli
+    bir yerde tut.</p>
+  <p><strong>Verileri içe aktar</strong> ile böyle bir dosyayı geri yükleyebilirsin. İçe
+    aktarma mevcut kayıtlarının <strong>yerine geçer</strong>, bu yüzden uygulama onay ister.</p>
+
+  <h2>4. Uygulama kilidi ve biyometrik</h2>
+  <p>İstersen uygulamayı bir PIN ile kilitleyebilirsin.</p>
+  <ul>
+    <li><strong>PIN'in saklanmaz.</strong> Yalnızca geri çevrilemeyen bir özeti tutulur
+      (PBKDF2-HMAC-SHA256, 120.000 tur, rastgele tuz). Bu özetten PIN'i geri hesaplamak
+      mümkün değildir.</li>
+    <li>Art arda yanlış girilirse yeni denemeler kademeli olarak yavaşlatılır.</li>
+    <li>Kilit açıkken uygulama <strong>ekran görüntüsü alınmasını engeller</strong> ve
+      Android'in "son uygulamalar" önizlemesinde içeriğin görünmez.</li>
+    <li><strong>Parmak izi / yüz tanıma</strong> kullanmayı seçersen, doğrulamayı tamamen
+      Android yapar. Uygulama senin biyometrik verine hiçbir zaman erişmez, onu görmez ve
+      saklamaz; yalnızca Android'den "doğrulandı" cevabını alır.</li>
+  </ul>
+  <p><strong>PIN'ini unutursan kilidi açmanın bir yolu yoktur.</strong> Bizim de yoktur.
+    Uygulamayı telefon ayarlarından sıfırlaman gerekir ve bu kayıtlarını siler. Kilidi
+    kurmadan önce bir dışa aktarma yapman önerilir.</p>
+
+  <h2>5. Kullanılan izinler</h2>
+  <div class="tw">
+  <table>
+    <tr><th>İzin</th><th>Neden gerekiyor</th></tr>
+    <tr><td>Bildirimler</td><td>Adet yaklaşınca ve seçtiğin günlük hatırlatmaları gösterebilmek için. Reddedebilirsin; uygulama bildirimler olmadan da tam olarak çalışır</td></tr>
+  </table>
+  </div>
+  <p>Ayla'nın istediği izin bundan ibarettir. Özellikle:</p>
+  <p><strong>İnternet izni yoktur.</strong> Uygulamanın izin listesinde
+    <code>android.permission.INTERNET</code> bulunmaz. Bu, "veri göndermiyoruz" sözünden
+    daha güçlü bir şeydir: uygulama isteseydi bile, işletim sistemi ağa çıkmasına izin
+    vermez. Bunu telefonunun uygulama bilgileri ekranından kendin doğrulayabilirsin.</p>
+  <p>Konum, kamera, mikrofon, kişiler, fotoğraflar, takvim, sağlık platformu ve reklam
+    kimliği izinleri de <strong>istenmez</strong>.</p>
+
+  <h2>6. Verilerin paylaşımı</h2>
+  <p>Ayla verilerini <strong>kimseyle paylaşmaz, kimseye satmaz, kimseye kiralamaz.</strong>
+    Reklam ağı, analitik sağlayıcı, veri simsarı ya da başka bir üçüncü tarafla hiçbir veri
+    alışverişi yoktur.</p>
+  <p>Uygulamanın içinde üçüncü taraf bir reklam, analitik, izleme ya da çökme raporlama
+    aracı bulunmaz. İnternet izni olmadığı için uygulama hiçbir dış servise bağlanmaz.</p>
+
+  <h2>7. Ekranında ve bildirimlerde görünenler</h2>
+  <p>Hatırlatma bildirimleri, telefonun kilitliyken kilit ekranında yalnızca genel bir
+    ifade gösterir ("Ayla – Yeni bir hatırlatman var"). Adet tarihin, belirtilerin ya da
+    başka bir sağlık ayrıntısı kilit ekranına düşmez. Telefonun kilidini açtığında
+    hatırlatmanın kendisini görürsün.</p>
+
+  <h2>8. Tıbbi uyarı</h2>
+  <p>Ayla bir tanı veya tedavi uygulaması değildir. Gösterdiği tahminler, senin
+    kaydettiğin geçmiş verilere dayalı yaklaşık sonuçlardır ve tıbbi tavsiye yerine
+    geçmez.</p>
+  <p><strong>Doğurganlık tahminleri doğum kontrol yöntemi olarak kullanılmamalıdır.</strong></p>
+  <p>Kaydettiğin belirtiler senin için olağandışıysa ya da bir endişen varsa bir sağlık
+    profesyoneline danışmayı düşünebilirsin.</p>
+
+  <h2>9. Çocukların gizliliği</h2>
+  <p>Ayla çocuklara yönelik değildir. Yaş, kimlik ya da iletişim bilgisi toplamadığı için
+    çocuklara ait kişisel veri de işlemez.</p>
+
+  <h2>10. Verilerin silinmesi</h2>
+  <p>Verilerinin tamamı senin kontrolünde:</p>
+  <ul>
+    <li><strong>Tek tek:</strong> günlük kayıtlarını ve adet işaretlerini uygulama içinden
+      düzenleyip silebilirsin.</li>
+    <li><strong>Tamamı:</strong> <strong>Profil → Veri Yönetimi → Tüm verileri sil</strong>
+      kayıtlarını kalıcı olarak siler.</li>
+    <li><strong>Uygulamayı kaldırmak</strong> da telefonundaki tüm verileri siler. Android
+      ayarlarındaki "Depolamayı temizle" aynı işi görür.</li>
+    <li><strong>Yedek dosyaları:</strong> kendi kaydettiğin dosyaları kendin silersin;
+      onların nerede olduğunu yalnızca sen bilirsin.</li>
+  </ul>
+  <p>Bizde tutulan bir kopya olmadığı için bize silme talebi göndermene gerek yok; silecek
+    bir şeyimiz yok. Bize yazdığın e-postaların silinmesini istersen yazman yeterli.</p>
+
+  <h2>11. Haklarınız</h2>
+  <p>KVKK ve GDPR gibi düzenlemeler; verilerine erişme, düzeltme, silme ve taşıma haklarını
+    tanır. Ayla'da bu hakların üçü de doğrudan uygulamanın içinde, kimseden izin almadan
+    kullanılır: kayıtlarını ekranda görürsün, düzenlersin, silersin ve
+    <strong>Verileri dışa aktar</strong> ile makine tarafından okunabilir bir dosya olarak
+    yanında götürürsün.</p>
+  <p>Bize başvurman gereken bir durum yoktur, çünkü bizde işlenen bir verin yoktur.</p>
+
+  <h2>12. Bu politikadaki değişiklikler</h2>
+  <p>Uygulama yeni bir özellik kazandığında bu metin güncellenebilir. Güncel sürüm her zaman
+    bu sayfadadır; yukarıdaki tarih son değişikliği gösterir. Veri işleme biçimini
+    değiştiren bir güncelleme olursa bunu uygulama içinde de duyururuz.</p>
+
+  <h2 id="iletisim">13. İletişim</h2>
+  <p>Ayla'yı <strong>Akbas Apps</strong> geliştirir ve yayınlar.</p>
+  <p>Soru, itiraz ya da hata bildirimi için:
+    <a href="mailto:akbasapps@gmail.com">akbasapps@gmail.com</a></p>
+
+  <footer>
+    <p>Ayla · Regl ve adet takibi</p>
+    <p>Bu politika uygulamanın tüm sürümleri için geçerlidir.</p>
+  </footer>
+</div>
+</body>
+</html>
