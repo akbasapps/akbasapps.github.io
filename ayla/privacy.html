@@ -19,7 +19,7 @@
   <header>
     <h1>Privacy Policy</h1>
     <p class="lede">What data Ayla processes, where it is stored, and what it never does.</p>
-    <p class="updated">Last updated: 28 September 2026</p>
+    <p class="updated">Last updated: 20 October 2026</p>
 
     <div class="summary">
       <p><strong>In short.</strong> Ayla has no server and
@@ -27,7 +27,8 @@
         symptoms and notes are stored only on your phone, encrypted. Nothing is sent to us,
         because the app is technically unable to send data anywhere.</p>
       <p>No account, no email, no ads, no analytics, no crash reporting, no cloud backup.</p>
-      <p>Your data leaves your phone only when <strong>you</strong> export it yourself.</p>
+      <p>Your data leaves your phone only by <strong>your own hand</strong>: when you save a
+        backup file or a cycle report from Data Management, or share the report.</p>
     </div>
   </header>
 
@@ -94,6 +95,19 @@
   <p><strong>Import data</strong> restores such a file. Importing <strong>replaces</strong>
     your existing records, so the app asks you to confirm.</p>
 
+  <h3>Cycle report (PDF)</h3>
+  <p><strong>Profile → Data Management → Cycle report</strong> creates a PDF report from your
+    records, for example to show your doctor. The report is first created only on your phone,
+    in the app's temporary folder, and shown to you. It moves to another place on your phone or
+    to another app only if you tap <strong>Save</strong> or <strong>Share</strong>.</p>
+  <p><strong>Your personal notes are never included in the report.</strong> It contains your
+    period dates, cycle lengths, pain, mood and symptoms.</p>
+  <p><strong>Share</strong> opens Android's own share sheet. The file is given only to the app
+    you choose (email, messaging, cloud storage and so on), and only for reading; Ayla never
+    sends the file anywhere by itself. From the moment you share it, the report is in the hands
+    of that app and of whoever you send it to. Like the backup file, the PDF is not
+    encrypted.</p>
+
   <h2>4. App lock and biometrics</h2>
   <p>You can optionally lock the app with a PIN.</p>
   <ul>
@@ -116,9 +130,14 @@
   <table>
     <tr><th>Permission</th><th>Why it is needed</th></tr>
     <tr><td>Notifications</td><td>To show period-approaching and daily reminders you have chosen. You may decline it; the app works fully without notifications</td></tr>
+    <tr><td>Use biometric hardware</td><td>To unlock the app lock with your fingerprint or face. Android performs the verification; Ayla never accesses biometric data</td></tr>
+    <tr><td>Prevent phone from sleeping, run at startup, foreground service</td><td>So reminders are shown on time and set up again after your phone restarts. Android's reminder framework (WorkManager) adds these permissions itself</td></tr>
+    <tr><td>View network connections</td><td>Added by the same framework so a task can check whether a connection exists if it is asked to run "only when online". Ayla does not use this. The permission <strong>does not allow going online</strong>; it only lets the app see whether a connection exists</td></tr>
   </table>
   </div>
-  <p>That is the complete list of permissions Ayla requests. In particular:</p>
+  <p>Notifications is the only permission you are asked for; the others are Android "normal"
+    permissions, granted automatically at install and listed on the Play Store page. In
+    particular:</p>
   <p><strong>There is no internet permission.</strong> The app's permission list does not
     contain <code>android.permission.INTERNET</code>. This is stronger than a promise not to
     send data: even if the app tried, the operating system would not let it reach the

@@ -20,7 +20,7 @@
     <h1>Gizlilik Politikası</h1>
     <p class="lede">Ayla'nın hangi verileri işlediğini, nerede sakladığını ve neleri
       hiç yapmadığını anlatır.</p>
-    <p class="updated">Son güncelleme: 28 Eylül 2026</p>
+    <p class="updated">Son güncelleme: 20 Ekim 2026</p>
 
     <div class="summary">
       <p><strong>Kısa özet.</strong> Ayla'nın sunucusu yok ve
@@ -30,7 +30,8 @@
       <p>Hesap yok, e-posta yok, reklam yok, analitik yok, çökme raporu yok,
         bulut yedeği yok.</p>
       <p>Verilerin telefonundan yalnızca <strong>senin kendi elinle</strong> çıkar:
-        Veri Yönetimi'nden bir yedek dosyası kaydettiğinde.</p>
+        Veri Yönetimi'nden bir yedek dosyası ya da döngü raporu kaydettiğinde veya raporu
+        paylaştığında.</p>
     </div>
   </header>
 
@@ -99,6 +100,18 @@
   <p><strong>Verileri içe aktar</strong> ile böyle bir dosyayı geri yükleyebilirsin. İçe
     aktarma mevcut kayıtlarının <strong>yerine geçer</strong>, bu yüzden uygulama onay ister.</p>
 
+  <h3>Döngü raporu (PDF)</h3>
+  <p><strong>Profil → Veri Yönetimi → Döngü raporu</strong> ile kayıtlarından bir PDF raporu üretebilirsin;
+    örneğin doktoruna göstermek için. Rapor önce yalnızca telefonunda, uygulamanın geçici
+    klasöründe oluşturulur ve sana gösterilir. Onu ancak sen <strong>Kaydet</strong> ya da
+    <strong>Paylaş</strong> dersen telefonun başka bir yerine ya da başka bir uygulamaya geçer.</p>
+  <p><strong>Kişisel notların rapora hiçbir zaman girmez.</strong> Raporda adet tarihlerin,
+    döngü süreleri, ağrı, ruh hali ve belirtiler bulunur.</p>
+  <p><strong>Paylaş</strong>, Android'in kendi paylaşım ekranını açar. Dosya yalnızca senin
+    seçtiğin uygulamaya (e-posta, mesajlaşma, bulut gibi) ve yalnızca okunmak üzere verilir;
+    Ayla dosyayı kendisi bir yere göndermez. Paylaştığın andan itibaren rapor, o uygulamanın
+    ve gönderdiğin kişinin elindedir. Yedek dosyası gibi PDF de şifreli değildir.</p>
+
   <h2>4. Uygulama kilidi ve biyometrik</h2>
   <p>İstersen uygulamayı bir PIN ile kilitleyebilirsin.</p>
   <ul>
@@ -121,9 +134,13 @@
   <table>
     <tr><th>İzin</th><th>Neden gerekiyor</th></tr>
     <tr><td>Bildirimler</td><td>Adet yaklaşınca ve seçtiğin günlük hatırlatmaları gösterebilmek için. Reddedebilirsin; uygulama bildirimler olmadan da tam olarak çalışır</td></tr>
+    <tr><td>Biyometrik donanımı kullanma</td><td>Uygulama kilidini parmak izi ya da yüzle açabilmek için. Doğrulamayı Android yapar; Ayla biyometrik veriye erişmez</td></tr>
+    <tr><td>Telefonun uyku moduna geçmesini önleme, başlangıçta çalışma, ön plan hizmeti</td><td>Hatırlatmaların zamanında gösterilmesi ve telefon yeniden başladığında yeniden kurulması için. Android'in hatırlatma altyapısı (WorkManager) bu izinleri kendisi ekler</td></tr>
+    <tr><td>Ağ bağlantılarını görüntüleme</td><td>Aynı altyapı, bir işin "internet varken" çalışması istenirse bağlantı olup olmadığına bakabilmek için ekler. Ayla bunu kullanmaz. Bu izin internete <strong>çıkmaya izin vermez</strong>; yalnızca bağlantı var mı diye bakmaya yarar</td></tr>
   </table>
   </div>
-  <p>Ayla'nın istediği izin bundan ibarettir. Özellikle:</p>
+  <p>Kullanıcıya sorulan tek izin bildirimlerdir; diğerleri Android'in "normal" izinleridir,
+    kurulumda kendiliğinden verilir ve Play Store sayfasındaki izin listesinde görünür. Özellikle:</p>
   <p><strong>İnternet izni yoktur.</strong> Uygulamanın izin listesinde
     <code>android.permission.INTERNET</code> bulunmaz. Bu, "veri göndermiyoruz" sözünden
     daha güçlü bir şeydir: uygulama isteseydi bile, işletim sistemi ağa çıkmasına izin
