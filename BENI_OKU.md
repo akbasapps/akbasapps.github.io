@@ -22,6 +22,9 @@ rutinim/gizlilik.html      Rutinim gizlilik politikası (TR)
 rutinim/privacy.html       Rutinim gizlilik politikası (EN)
 ayla/gizlilik.html         Ayla gizlilik politikası (TR)
 ayla/privacy.html          Ayla gizlilik politikası (EN)
+harfika-icon.png           Harfika simgesi
+harfika/gizlilik.html      Harfika gizlilik politikası (TR)
+harfika/privacy.html       Harfika gizlilik politikası (EN)
 google...html              Google Search Console doğrulama dosyası — SİLME
 ```
 
@@ -35,6 +38,12 @@ Bu bağlantılar mağaza girişlerinde kayıtlı; **dosya adlarını değiştirm
 
 - Rutinim: <https://akbasapps.github.io/rutinim/privacy.html>
 - Ayla: <https://akbasapps.github.io/ayla/gizlilik.html>
+- Harfika: <https://akbasapps.github.io/harfika/gizlilik.html> (29 Ekim 2026; Harfika reklamlı
+  olduğu için ana sayfadaki "reklam yok" ifadesi uygulama kartlarına taşındı)
+
+Harfika AdMob kullanıyor: AdMob kimliği alınınca sitenin **köküne** `app-ads.txt` eklenecek
+(<https://akbasapps.github.io/app-ads.txt>). Harfika'nın kaynak metinleri ve bu sitenin kopyası
+Harfika projesinde `docs/yayin/site/` altında.
 
 ## Yayına alma
 
